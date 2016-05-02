@@ -11,7 +11,30 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160502201208) do
+ActiveRecord::Schema.define(version: 20160502203436) do
+
+  create_table "night_houses", force: :cascade do |t|
+    t.string   "name"
+    t.string   "cnpj"
+    t.string   "email"
+    t.string   "category"
+    t.string   "state"
+    t.string   "city"
+    t.string   "neighbourhood"
+    t.string   "address"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
+
+  create_table "parties", force: :cascade do |t|
+    t.string   "name"
+    t.string   "category"
+    t.string   "add_info"
+    t.string   "music_style"
+    t.integer  "NightHouse_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "name"
