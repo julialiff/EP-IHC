@@ -1,0 +1,2 @@
+module NightHousesHelper
+end

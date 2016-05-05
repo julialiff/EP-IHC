@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @night_house.name %>
+</p>
+
+<p>
+  <strong>Cnpj:</strong>
+  <%= @night_house.cnpj %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @night_house.email %>
+</p>
+
+<p>
+  <strong>Category:</strong>
+  <%= @night_house.category %>
+</p>
+
+<p>
+  <strong>State:</strong>
+  <%= @night_house.state %>
+</p>
+
+<p>
+  <strong>City:</strong>
+  <%= @night_house.city %>
+</p>
+
+<p>
+  <strong>Neighbourhood:</strong>
+  <%= @night_house.neighbourhood %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @night_house.address %>
+</p>
+
+<%= link_to 'Edit', edit_night_house_path(@night_house) %> |
+<%= link_to 'Back', night_houses_path %>
