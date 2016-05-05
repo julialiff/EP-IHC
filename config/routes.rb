@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :parties
+  resources :night_houses
   resources :users
   root 'users#index'
   # The priority is based upon order of creation: first created -> highest priority.
