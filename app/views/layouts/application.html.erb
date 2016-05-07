@@ -1,29 +1,32 @@
 <%# provide(:title, "Home") %>
 <!DOCTYPE html>
 <html>
-<head>
-  <title><%= full_title(yield(:title)) %></title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-<header>
-	<h1 id="logo">PartyFinder</h1>
-	<div id="login">Olá, fulano</div>
-</header>
-<menu>
-	<div class="menu">
-		Home | Casas Noturnas | Festas | Amigos | Sobre o site
-	</div>
-</menu>
-<br />
-<sidebar>
-	lalalala
-</sidebar>
-<content>
-	<%= yield %>
-</content>
+	<head>
+	  <title><%= full_title(yield(:title)) %></title>
+  	<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  	<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  	<%= csrf_meta_tags %>
+	</head>
+	<body>
+	<header>
+		<h1 id="logo">PartyFinder</h1>
+		<div id="login">Olá, fulano</div>
+	</header>
+	<br />
+	<nav>
+    <ul class="nav navbar-nav navbar-left">
+      <li><%= link_to "Home",   '#' %></li>
+      <li><%= link_to "Help",   '#' %></li>
+      <li><%= link_to "Log in", '#' %></li>
+    </ul>
+  </nav>
+	<br />
+	<menu>
+		lalalala
+	</menu>
+	<content>
+		<%= yield %>
+	</content>
 
-</body>
+	</body>
 </html>
