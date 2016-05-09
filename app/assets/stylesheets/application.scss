@@ -36,22 +36,11 @@ header{
 }
 
 nav{
-	float:left;
+	/*float:left;*/
 	width: 100%;
 	background-color: #696969;
 }
 
-content{
-	float:left;
-	width:60%;
-	background-color: #AAA;
-	margin-left: 5%;
-	padding: 10px;
-}
-
-menu{
-	float:left;
-	background-color: #666;
-	width:20%;
-	margin-left: 5%;
+#container{
+	background-color: #aaa;
 }

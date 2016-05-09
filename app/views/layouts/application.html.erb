@@ -8,25 +8,11 @@
   	<%= csrf_meta_tags %>
 	</head>
 	<body>
-	<header>
-		<h1 id="logo">PartyFinder</h1>
-		<div id="login">Olá, fulano</div>
-	</header>
+	<%= render 'layouts/header' %>
 	<br />
-	<nav>
-    <ul class="nav navbar-nav navbar-left">
-      <li><%= link_to "Home",   '#' %></li>
-      <li><%= link_to "Help",   '#' %></li>
-      <li><%= link_to "Log in", '#' %></li>
-    </ul>
-  </nav>
-	<br />
-	<menu>
-		lalalala
-	</menu>
-	<content>
+	<div class="container">
 		<%= yield %>
-	</content>
+	</div>
 
 	</body>
 </html>
