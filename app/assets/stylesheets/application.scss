@@ -1,3 +1,5 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
@@ -13,3 +15,32 @@
  *= require_tree .
  *= require_self
  */
+header{
+	background-color:#9C9C9C;
+	float: left;
+	width:100%;
+}
+
+#logo{
+	float:left;
+	padding-left: 10px;
+	padding-bottom: 10px;
+	padding-top: 10px;
+}
+
+#login{
+	float:left;
+	padding-left: 1000px;
+	padding-top:45px;
+	padding-bottom: 5px;
+}
+
+nav{
+	/*float:left;*/
+	width: 100%;
+	background-color: #696969;
+}
+
+#container{
+	background-color: #aaa;
+}
