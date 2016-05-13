@@ -7,6 +7,27 @@ pt-BR:
         restrict_dependent_destroy:
           has_one: Não é possível excluir o registro pois existe um %{record} dependente
           has_many: Não é possível excluir o registro pois existem %{record} dependentes
+          Name: Nome
+          Cnpj: CNPJ
+          Email: E-mail
+          Category: Categoria
+          State: Estado
+          City: Cidade
+          Neighbourhood: Bairro
+          Address: Endereço
+          Cellphone: Celular
+          Photo: Foto
+          Birth_date: Data de Nascimento
+          Occupation: Ocupação
+          College: Faculdade
+          Add_info: Informações adicionais
+          Music_style: Estilo musical
+          Nighthouse: Casa noturna
+          Password: Senha
+          Password_confirmation: Confirmação de senha
+
+
+
   Name: Nome
   Cnpj: CNPJ
   Email: E-mail
@@ -23,6 +44,26 @@ pt-BR:
   Add_info: Informações adicionais
   Music_style: Estilo musical
   Nighthouse: Casa noturna
+  Password: Senha
+  Password_confirmation: Confirmação de senha
+  name: Nome
+  cnpj: CNPJ
+  email: E-mail
+  category: Categoria
+  state: Estado
+  city: Cidade
+  neighbourhood: Bairro
+  address: Endereço
+  cellphone: Celular
+  photo: Foto
+  birth_date: Data de Nascimento
+  occupation: Ocupação
+  college: Faculdade
+  add_info: Informações adicionais
+  music_style: Estilo musical
+  nighthouse: Casa noturna
+  password: Senha
+  password_confirmation: Confirmação de senha
   date:
     abbr_day_names:
     - Dom

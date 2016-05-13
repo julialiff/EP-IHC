@@ -2,7 +2,10 @@ require 'test_helper'
 
 class UserTest < ActiveSupport::TestCase
 	def setup
-		@user = User.new(name: "Example User", email: "usuario@example.com", cellphone: "1198765-4321", birth_date: "01/01/1996", occupation: "engineer", college: "usp", state: "São Paulo", city: "São Paulo", neighbourhood: "Tatuapé", password: "foobar", password_confirmation: "foobar")
+		@user = User.new(name: "Example User", email: "usuario@example.com", cellphone: "1198765-4321",
+                     birth_date: "01/01/1996", occupation: "engineer", college: "usp", state: "São Paulo",
+                     city: "São Paulo", neighbourhood: "Tatuapé", password: "foobar",
+                     password_confirmation: "foobar")
 	end
 
 	test "should be valid" do
@@ -16,6 +19,41 @@ class UserTest < ActiveSupport::TestCase
 
   test "email should be present" do
     @user.email = "     "
+    assert_not @user.valid?
+  end
+
+  test "cellphone should be present" do
+    @user.cellphone = "     "
+    assert_not @user.valid?
+  end
+
+  test "birth_date should be present" do
+    @user.birth_date = "     "
+    assert_not @user.valid?
+  end
+
+  test "occupation should be present" do
+    @user.occupation = "     "
+    assert_not @user.valid?
+  end
+
+  test "college should be present" do
+    @user.college = "     "
+    assert_not @user.valid?
+  end
+
+  test "state should be present" do
+    @user.state = "     "
+    assert_not @user.valid?
+  end
+
+  test "city should be present" do
+    @user.city = "     "
+    assert_not @user.valid?
+  end
+
+  test "neighbourhood should be present" do
+    @user.neighbourhood = "     "
     assert_not @user.valid?
   end
 
