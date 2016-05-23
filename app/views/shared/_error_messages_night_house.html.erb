@@ -1,10 +1,10 @@
-<% if @user.errors.any? %>
+<% if @night_house.errors.any? %>
   <div id="error_explanation">
     <div class="alert alert-danger">
-      Há <%= pluralize(@user.errors.count, "erro") %>.
+      Há <%= pluralize(@night_house.errors.count, "erro") %>.
     </div>
     <ul>
-    <% @user.errors.full_messages.each do |msg| %>
+    <% @night_house.errors.full_messages.each do |msg| %>
       <!-- <li><%#= msg %></li> -->
       <li><%= t(msg.split.first) %> <%= msg.split[1..-1].join(' ') %></li>
     <% end %>

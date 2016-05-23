@@ -10,6 +10,7 @@ class NightHousesController < ApplicationController
   # GET /night_houses/1
   # GET /night_houses/1.json
   def show
+    @nightHouse =  NightHouse.find(params[:id])
   end
 
   # GET /night_houses/new
@@ -25,15 +26,11 @@ class NightHousesController < ApplicationController
   # POST /night_houses.json
   def create
     @night_house = NightHouse.new(night_house_params)
-
-    respond_to do |format|
-      if @night_house.save
-        format.html { redirect_to @night_house, notice: 'Night house was successfully created.' }
-        format.json { render :show, status: :created, location: @night_house }
-      else
-        format.html { render :new }
-        format.json { render json: @night_house.errors, status: :unprocessable_entity }
-      end
+    if @night_house.save
+      flash[:success] = "Bem-vindo!"
+      redirect_to @night_house
+    else
+      render 'new'
     end
   end
 
@@ -69,6 +66,6 @@ class NightHousesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def night_house_params
-      params.require(:night_house).permit(:name, :cnpj, :email, :category, :state, :city, :neighbourhood, :address)
+      params.require(:night_house).permit(:name, :cnpj, :email, :category, :state, :city, :neighbourhood, :address, :password, :password_confirmation)
     end
 end

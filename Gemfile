@@ -12,9 +12,9 @@ gem 'rails-i18n'
 gem 'bootstrap-sass', '~> 3.3.6'
 gem 'bcrypt',               '3.1.7'
 gem 'awesome_print'
-gem 'guard-livereload'
-gem 'guard-redcarpet'
-gem 'redcarpet'
+# gem 'guard-livereload'
+# gem 'guard-redcarpet'
+# gem 'redcarpet'
 
 group :development, :test do
   gem 'sqlite3',     '1.3.9'
@@ -32,5 +32,5 @@ end
 group :production do
   gem 'pg',             '0.17.1'
   gem 'rails_12factor', '0.0.2'
-  gem 'puma',           '3.1.0'
+  # gem 'puma',           '3.1.0'
 end
