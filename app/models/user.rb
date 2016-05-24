@@ -2,7 +2,7 @@ class User < ActiveRecord::Base
   before_save { email.downcase! }
 	validates :name,  presence: true, length: { maximum: 50 }
   validates :cellphone, presence: true
-  validates :birth_date, presence: true
+  validates :birthdate, presence: true
   validates :occupation, presence: true
   validates :college, presence: true
   validates :state, presence: true

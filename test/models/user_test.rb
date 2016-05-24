@@ -3,7 +3,7 @@ require 'test_helper'
 class UserTest < ActiveSupport::TestCase
 	def setup
 		@user = User.new(name: "Example User", email: "usuario@example.com", cellphone: "1198765-4321",
-                     birth_date: "01/01/1996", occupation: "engineer", college: "usp", state: "São Paulo",
+                     birthdate: "01/01/1996", occupation: "engineer", college: "usp", state: "São Paulo",
                      city: "São Paulo", neighbourhood: "Tatuapé", password: "foobar",
                      password_confirmation: "foobar")
 	end
@@ -27,8 +27,8 @@ class UserTest < ActiveSupport::TestCase
     assert_not @user.valid?
   end
 
-  test "birth_date should be present" do
-    @user.birth_date = "     "
+  test "birthdate should be present" do
+    @user.birthdate = "     "
     assert_not @user.valid?
   end
 

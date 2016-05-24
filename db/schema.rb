@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160509182757) do
+ActiveRecord::Schema.define(version: 20160524143232) do
 
   create_table "night_houses", force: :cascade do |t|
     t.string   "name"
@@ -44,7 +44,7 @@ ActiveRecord::Schema.define(version: 20160509182757) do
     t.string   "email"
     t.string   "cellphone"
     t.string   "photo"
-    t.string   "birth_date"
+    t.string   "birthdate"
     t.string   "occupation"
     t.string   "college"
     t.string   "state"

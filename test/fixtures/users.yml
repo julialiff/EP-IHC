@@ -5,7 +5,7 @@
 #   email: MyString
 #   cellphone: MyString
 #   photo: MyString
-#   birth_date: MyString
+#   birthdate: MyString
 #   occupation: MyString
 #   college: MyString
 #   state: MyString
@@ -17,7 +17,7 @@
 #   email: MyString
 #   cellphone: MyString
 #   photo: MyString
-#   birth_date: MyString
+#   birthdate: MyString
 #   occupation: MyString
 #   college: MyString
 #   state: MyString

@@ -17,7 +17,7 @@ pt-BR:
           Address: Endereço
           Cellphone: Celular
           Photo: Foto
-          Birth_date: Data de Nascimento
+          Birthdate: Data de Nascimento
           Occupation: Ocupação
           College: Faculdade
           Add_info: Informações adicionais
@@ -38,7 +38,7 @@ pt-BR:
   Address: Endereço
   Cellphone: Celular
   Photo: Foto
-  Birth_date: Data de Nascimento
+  Birthdate: Data de Nascimento
   Occupation: Ocupação
   College: Faculdade
   Add_info: Informações adicionais
@@ -56,7 +56,7 @@ pt-BR:
   address: Endereço
   cellphone: Celular
   photo: Foto
-  birth_date: Data de Nascimento
+  birthdate: Data de Nascimento
   occupation: Ocupação
   college: Faculdade
   add_info: Informações adicionais
