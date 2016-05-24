@@ -19,3 +19,6 @@
 #   city: MyString
 #   neighbourhood: MyString
 #   address: MyString
+
+
+NightHouse.create(name: "Blitz Haus", cnpj: "12.345.678/0001-90", email: "blitzhaus@blitz.com", category: "Indie", state: "São Paulo", city: "São Paulo", neighbourhood: "Consolação", address: "Rua Augusta, 675")
