@@ -31,19 +31,37 @@
 	          </ul>
 	        </li>
 	      </ul>
-	      <ul class="nav navbar-nav navbar-right">
-	        <li><a href="#">Link</a></li>
-	        <li class="dropdown">
-	          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
-	          <ul class="dropdown-menu">
-	            <li><a href="#">Action</a></li>
-	            <li><a href="#">Another action</a></li>
-	            <li><a href="#">Something else here</a></li>
-	            <li role="separator" class="divider"></li>
-	            <li><a href="#">Separated link</a></li>
-	          </ul>
-	        </li>
-	      </ul>
+
+				<% if logged_in? %>
+	      	<ul class="nav navbar-nav navbar-right">
+	       	 <li><a href="#"><%= @current_user.name %></a></li>
+	       	 <li class="dropdown">
+	       	   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Conta<span class="caret"></span></a>
+	       	   <ul class="dropdown-menu">
+	       	     <li><a href="#">Editar informações</a></li>
+	       	     <li><a href="#">Festas que eu fui</a></li>
+	       	     <li><a href="#">Casas preferidas</a></li>
+	       	     <li role="separator" class="divider"></li>
+	       	     <li><%= link_to "Sair <span class='glyphicon glyphicon-off'></span>", logout_path, method: :delete %></li>
+	       	   </ul>
+	       	 </li>
+	      	</ul>
+				<% else %>
+  				<ul class="nav navbar-nav navbar-right">
+	       	 <li><%= link_to "Login", login_path %></li>
+           <li><%= link_to "Cadastro", signup_path %></li>
+	       	 <!-- <li class="dropdown">
+	       	   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Conta<span class="caret"></span></a>
+	       	   <ul class="dropdown-menu">
+	       	     <li><a href="#">Action</a></li>
+	       	     <li><a href="#">Another action</a></li>
+	       	     <li><a href="#">Something else here</a></li>
+	       	     <li role="separator" class="divider"></li>
+	       	     <li><a href="#">Separated link</a></li>
+	       	   </ul> -->
+				<% end %>
+
+
 	    </div><!-- /.navbar-collapse -->
 	  </div><!-- /.container-fluid -->
 	</nav>
