@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'nhsessions/new'
+
   get 'sessions/new'
 
   root   'static_pages#home'
@@ -8,6 +10,9 @@ Rails.application.routes.draw do
   get    'login'     => 'sessions#new'
   post   'login'     => 'sessions#create'
   delete 'logout'    => 'sessions#destroy'
+  get    'loginnh'   => 'nhsessions#new'
+  post   'loginnh'   => 'nhsessions#create'
+  delete 'logoutnh'  => 'nhsessions#destroy'
 
 
   resources :parties
