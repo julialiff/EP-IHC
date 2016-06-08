@@ -2,6 +2,7 @@ class NhsessionsController < ApplicationController
   def new
   end
 
+  # Creating a new session
   def create
     nightHouse = NightHouse.find_by(email: params[:nhsession][:email].downcase)
     if nightHouse && nightHouse.authenticate(params[:nhsession][:password])
