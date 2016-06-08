@@ -1,13 +1,18 @@
 Rails.application.routes.draw do
+  get 'nhsessions/new'
+
   get 'sessions/new'
 
   root   'static_pages#home'
-  get    'about'   => 'static_pages#about'
-  get    'signup'  => 'users#new'
-  get    'login'   => 'sessions#new'
-  post   'login'   => 'sessions#create'
-  delete 'logout'  => 'sessions#destroy'
-
+  get    'about'    => 'static_pages#about'
+  get    'signup'   => 'users#new'
+  get    'login'    => 'sessions#new'
+  post   'login'    => 'sessions#create'
+  delete 'logout'   => 'sessions#destroy'
+  get    'signupnh' => 'night_houses#new'
+  get    'loginnh'  => 'nhsessions#new'
+  post   'loginnh'  => 'nhsessions#create'
+  delete 'logoutnh' => 'nhsessions#destroy'
 
   resources :parties
   resources :night_houses
