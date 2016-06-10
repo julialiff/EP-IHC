@@ -25,10 +25,11 @@ class NightHousesController < ApplicationController
   # POST /night_houses
   # POST /night_houses.json
   def create
-    @night_house = NightHouse.new(night_house_params)
+    @nightHouse = NightHouse.new(night_house_params)
     if @night_house.save
+      nhlog_in @nightHouse
       flash[:success] = "Bem-vindo!"
-      redirect_to @night_house
+      redirect_to @nightHouse
     else
       render 'new'
     end

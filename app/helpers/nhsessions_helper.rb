@@ -12,4 +12,9 @@ module NhsessionsHelper
   def nhlogged_in?
     !current_nh.nil?
   end
+
+  def nhlog_out
+    session.delete(:nightHouse_id)
+    @current_nh = nil
+  end
 end

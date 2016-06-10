@@ -15,5 +15,7 @@ class NhsessionsController < ApplicationController
   end
 
   def destroy
+    nhlog_out
+    redirect_to root_url
   end
 end
