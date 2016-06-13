@@ -64,6 +64,9 @@ pt-BR:
   nighthouse: Casa noturna
   password: Senha
   password_confirmation: Confirmação de senha
+  will_paginate:
+    previous_label: <span class="glyphicon glyphicon-menu-left"></span>
+    next_label: <span class="glyphicon glyphicon-menu-right"></span>
   date:
     abbr_day_names:
     - Dom
