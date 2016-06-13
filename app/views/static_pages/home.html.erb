@@ -1,9 +1,36 @@
-<p>
-  Deseja encontrar festas próximas a você?<br />
-  <%= link_to "Cadastre-se!", signup_path, class: "btn btn-lg btn-primary" %>
-</p>
-<p>
-  É dono de uma balada e deseja promover suas festas?<br />
-  <%= link_to "Cadastre-se!", signupnh_path, class: "btn btn-lg btn-primary" %>
-</p>
+<% if logged_in? %>
+    <div class="row">
+    <aside class="col-md-4">
+      <section class="user_info">
+        USER SHIT
+      </section>
+      <section class="micropost_form">
+        <%#= render 'shared/micropost_form' %>
+      </section>
+    </aside>
+  </div>
+<% elsif nhlogged_in? %>
+  <div class="row">
+    <aside class="col-md-4">
+      <section class="user_info">
+        SUAS FESTAS
+      </section>
+      <section class="micropost_form">
+        <%#= render 'shared/micropost_form' %>
+      </section>
+    </aside>
+  </div>
+<% else %>
+  <p>
+    Deseja encontrar festas próximas a você?<br />
+    <%= link_to "Cadastre-se!", signup_path, class: "btn btn-lg btn-primary" %>
+  </p>
+  <p>
+    É dono de uma balada e deseja promover suas festas?<br />
+    <%= link_to "Cadastre-se!", signupnh_path, class: "btn btn-lg btn-primary" %>
+  </p>
+<% end %>
+
+
+
 

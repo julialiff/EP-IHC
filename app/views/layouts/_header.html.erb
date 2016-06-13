@@ -19,6 +19,9 @@
           <% if logged_in? %>
             <li><%= link_to "Amigos", users_path %></li>
           <% end %>
+          <% if nhlogged_in? %>
+            <li><%= link_to "<i class='glyphicon glyphicon-plus'></i> Criar Evento" .html_safe, newparty_path %></li>
+          <% end %>
         </ul>
 
         <% if logged_in? %>
@@ -45,7 +48,7 @@
              <ul class="dropdown-menu">
                <li><%= link_to "Editar informações <i class='glyphicon glyphicon-cog'></i>" .html_safe, "#" %></li>
                <li><a href="#">Minhas Festas</a></li>
-               <li><a href="#">Casas preferidas</a></li>
+               <!-- <li><a href="#">Casas preferidas</a></li> -->
                <li role="separator" class="divider"></li>
                <li><%= link_to "Sair <i class='glyphicon glyphicon-log-out'></i>" .html_safe, logoutnh_path, method: :delete %></li>
              </ul>
