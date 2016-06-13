@@ -1,42 +1,12 @@
-<% provide(:title, "Casas Noturnas") %>
-<p id="notice"><%= notice %></p>
+<% provide(:title, 'Casas Noturnas') %>
+<h1>Casas Noturnas</h1>
 
-<h1>Lista de Casas Noturnas</h1>
+<%= will_paginate %>
 
-<table>
-  <thead>
-    <tr>
-      <th><%= t(:Name) %></th>
-      <th><%= t(:Cnpj) %></th>
-      <th><%= t(:Email)%></th>
-      <th><%= t(:Category)%></th>
-      <th><%= t(:State)%></th>
-      <th><%= t(:City)%></th>
-      <th><%= t(:Neighbourhood)%></th>
-      <th><%= t(:Address)%></th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<ul class="users">
+  <% @night_houses.each do |night_house| %>
+    <%= render night_house %>
+  <% end %>
+</ul>
 
-  <tbody>
-    <% @night_houses.each do |night_house| %>
-      <tr>
-        <td><%= night_house.name %></td>
-        <td><%= night_house.cnpj %></td>
-        <td><%= night_house.email %></td>
-        <td><%= night_house.category %></td>
-        <td><%= night_house.state %></td>
-        <td><%= night_house.city %></td>
-        <td><%= night_house.neighbourhood %></td>
-        <td><%= night_house.address %></td>
-        <td><%= link_to 'Show', night_house %></td>
-        <td><%= link_to 'Edit', edit_night_house_path(night_house) %></td>
-        <td><%= link_to 'Destroy', night_house, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Night house', new_night_house_path %>
+<%= will_paginate %>
