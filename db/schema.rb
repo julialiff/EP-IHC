@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160613175318) do
+ActiveRecord::Schema.define(version: 20160613230243) do
 
   create_table "night_houses", force: :cascade do |t|
     t.string   "name"
@@ -38,6 +38,8 @@ ActiveRecord::Schema.define(version: 20160613175318) do
     t.integer  "NightHouse_id"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
+    t.date     "partydate"
+    t.datetime "partytime"
   end
 
   create_table "users", force: :cascade do |t|
