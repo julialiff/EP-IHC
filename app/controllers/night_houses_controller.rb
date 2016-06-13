@@ -1,10 +1,12 @@
 class NightHousesController < ApplicationController
   before_action :set_night_house, only: [:show, :edit, :update, :destroy]
+  before_action :logged_in_nh, only: [:edit, :update]
+  before_action :correct_nh,   only: [:edit, :update]
 
   # GET /night_houses
   # GET /night_houses.json
   def index
-    @night_houses = NightHouse.all
+    @night_houses = NightHouse.paginate(page: params[:page], per_page: 10)
   end
 
   # GET /night_houses/1
@@ -68,5 +70,18 @@ class NightHousesController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def night_house_params
       params.require(:night_house).permit(:name, :cnpj, :email, :category, :state, :city, :neighbourhood, :address, :password, :password_confirmation)
+    end
+
+    # Confirms a logged-in user.
+    def logged_in_nh
+      unless nhlogged_in?
+        flash[:danger] = "Por favor, faça login."
+        redirect_to loginnh_url
+      end
+    end
+
+    def correct_nh
+      @night_house = NightHouse.find(params[:id])
+      redirect_to(root_url) unless @night_house == current_nh
     end
 end

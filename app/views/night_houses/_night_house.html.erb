@@ -1,0 +1,12 @@
+    <li>
+      <div class="col-md-2">
+        <%= gravatar_for night_house %>
+        </div>
+      <div class="col-md-10">
+        <%= link_to night_house.name, night_house %>
+        <h6>
+          <%= night_house.category %> · <%= night_house.city %>, <%= night_house.state %><br />
+          <%= night_house.address %>
+          </h6>
+      </div>
+    </li>
