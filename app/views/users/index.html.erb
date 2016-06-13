@@ -1,46 +1,11 @@
-<% provide(:title, "Usuários") %>
-<p id="notice"><%= notice %></p>
+<% provide(:title, 'Pessoas') %>
+<h1>Pessoas</h1>
 
-<h1>Usuários:</h1>
+<%= will_paginate %>
+<ul class="users">
+  <% @users.each do |user| %>
+    <%= render user %>
+  <% end %>
+</ul>
 
-<table>
-  <thead>
-    <tr>
-      <th><%= t(:Name)%></th>
-      <th><%= t(:Email)%></th>
-      <th><%= t(:Cellphone)%></th>
-      <th><%= t(:Photo)%></th>
-      <th><%= t(:Birthdate)%></th>
-      <th><%= t(:Occupation)%></th>
-      <th><%= t(:College)%></th>
-      <th><%= t(:State)%></th>
-      <th><%= t(:City)%></th>
-      <th><%= t(:Neighbourhood)%></th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @users.each do |user| %>
-      <tr>
-        <td><%= user.name %></td>
-        <td><%= user.email %></td>
-        <td><%= user.cellphone %></td>
-        <td><%= user.photo %></td>
-        <td><%= user.birthdate %></td>
-        <td><%= user.occupation %></td>
-        <td><%= user.college %></td>
-        <td><%= user.state %></td>
-        <td><%= user.city %></td>
-        <td><%= user.neighbourhood %></td>
-        <td><%= link_to 'Show', user %></td>
-        <td><%= link_to 'Edit', edit_user_path(user) %></td>
-        <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New User', new_user_path %>
+<%= will_paginate %>

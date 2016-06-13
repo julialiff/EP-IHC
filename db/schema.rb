@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160610225140) do
+ActiveRecord::Schema.define(version: 20160613175318) do
 
   create_table "night_houses", force: :cascade do |t|
     t.string   "name"
@@ -51,10 +51,11 @@ ActiveRecord::Schema.define(version: 20160610225140) do
     t.string   "state"
     t.string   "city"
     t.string   "neighbourhood"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
     t.string   "password_digest"
     t.string   "remember_digest"
+    t.boolean  "admin",           default: false
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
