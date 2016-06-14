@@ -46,6 +46,8 @@ pt-BR:
   Nighthouse: Casa noturna
   Password: Senha
   Password_confirmation: Confirmação de senha
+  Partydate: Data
+  Partytime: Hora
   name: Nome
   cnpj: CNPJ
   email: E-mail
@@ -64,10 +66,16 @@ pt-BR:
   nighthouse: Casa noturna
   password: Senha
   password_confirmation: Confirmação de senha
+  partydate: Data
+  partytime: Hora
   will_paginate:
     previous_label: <span class="glyphicon glyphicon-menu-left"></span>
     next_label: <span class="glyphicon glyphicon-menu-right"></span>
   date:
+    order:
+      - :day
+      - :month
+      - :year
     abbr_day_names:
     - Dom
     - Seg

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160613230243) do
+ActiveRecord::Schema.define(version: 20160614051510) do
 
   create_table "night_houses", force: :cascade do |t|
     t.string   "name"
@@ -36,11 +36,14 @@ ActiveRecord::Schema.define(version: 20160613230243) do
     t.string   "add_info"
     t.string   "music_style"
     t.integer  "NightHouse_id"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
     t.date     "partydate"
-    t.datetime "partytime"
+    t.string   "partytime"
+    t.integer  "night_house_id"
   end
+
+  add_index "parties", ["night_house_id"], name: "index_parties_on_night_house_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "name"

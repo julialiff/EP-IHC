@@ -18,3 +18,12 @@
 </div>
 <hr />
 <h3>Festas & Eventos</h3>
+<div class="col-md-8">
+    <% if @night_house.parties.any? %>
+      <h3>Festas (<%= @night_house.parties.count %>)</h3>
+      <ol class="microposts">
+        <%= render @parties %>
+      </ol>
+      <%= will_paginate @parties %>
+    <% end %>
+  </div>
