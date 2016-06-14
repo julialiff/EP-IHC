@@ -4,7 +4,7 @@ class PartiesController < ApplicationController
   # GET /parties
   # GET /parties.json
   def index
-    @parties = Party.all
+    @parties = Party.paginate(page: params[:page], per_page: 10)
   end
 
   # GET /parties/1
@@ -29,7 +29,8 @@ class PartiesController < ApplicationController
       flash[:success] = "Festa criada!"
       redirect_to @party
     else
-      render 'static_pages/home'
+      # redirect_to newparty_path
+      render 'new'
     end
     # @party = Party.new(party_params)
 
@@ -74,8 +75,7 @@ class PartiesController < ApplicationController
       @party = Party.find(params[:id])
     end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
     def party_params
-      params.require(:party).permit(:name, :category, :add_info, :music_style, :partydate, :partytime)
+      params.require(:party).permit(:name, :category, :addinfo, :musicstyle, :partydate, :partytime)
     end
 end

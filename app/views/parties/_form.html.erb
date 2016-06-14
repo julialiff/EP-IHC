@@ -11,12 +11,12 @@
     <%= f.text_field :category, class: 'form-control' %>
   </div>
   <div class="col-md-6">
-    <%= f.label t(:add_info) %><br>
-    <%= f.text_field :add_info, class: 'form-control' %>
+    <%= f.label t(:addinfo) %><br>
+    <%= f.text_field :addinfo, class: 'form-control' %>
   </div>
   <div class="col-md-6">
-    <%= f.label t(:music_style) %><br>
-    <%= f.select(:music_style, [['Alternativa', 'alternativa'], ['Anos 70/80', 'anos70'], ['Eletrônica', 'eletronica'], ['Indie', 'indie'], ['Pop', 'pop'], ['Rap', 'rap'], ['Rock', 'rock'], ['Sertanejo', 'sertanejo']], {}, { :class => 'form-control' }) %>
+    <%= f.label t(:musicstyle) %><br>
+    <%= f.select(:musicstyle, [['', ''], ['Alternativa', 'Alternativa'], ['Anos 70/80', 'Anos 70/80'], ['Eletrônica', 'Eletrônica'], ['Indie', 'Indie'], ['Pop', 'Pop'], ['Rap', 'Rap'], ['Rock', 'Rock'], ['Sertanejo', 'Sertanejo']], {}, { :class => 'form-control' }) %>
   </div>
   <div class="col-md-6">
     <%= f.label t(:partydate) %><br />

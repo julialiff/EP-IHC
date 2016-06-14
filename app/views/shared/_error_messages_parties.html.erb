@@ -1,10 +1,12 @@
 <% if @party.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@party.errors.count, "error") %> prohibited this party from being saved:</h2>
+  <div id="error_explanation">
+    <div class="alert alert-danger">
+      Há <%= pluralize(@party.errors.count, "erro") %></h2>
       <ul>
-      <% @party.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
+      <% @party.errors.full_messages.each do |msg| %>
+        <li><%= t(msg.split.first) %> <%= msg.split[1..-1].join(' ') %></li>
       <% end %>
       </ul>
     </div>
-  <% end %>
+  </div>
+<% end %>

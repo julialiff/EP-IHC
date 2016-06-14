@@ -17,13 +17,12 @@
   </div>
 </div>
 <hr />
-<h3>Festas & Eventos</h3>
-<div class="col-md-8">
+  <div class="col-md-8">
     <% if @night_house.parties.any? %>
-      <h3>Festas (<%= @night_house.parties.count %>)</h3>
-      <ol class="microposts">
+      <h3>Festas & Eventos (<%= @night_house.parties.count %>)</h3>
+      <ul class="users">
         <%= render @parties %>
-      </ol>
+      </ul>
       <%= will_paginate @parties %>
     <% end %>
   </div>

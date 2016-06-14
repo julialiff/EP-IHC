@@ -1,36 +1,12 @@
-<% provide(:title, "Festas") %>
-<p id="notice"><%= notice %></p>
+<% provide(:title, 'Festas') %>
+<h1>Festas</h1>
 
-<h1>Listing Parties</h1>
+<%= will_paginate %>
 
-<table>
-  <thead>
-    <tr>
-      <th><%= t(:Name)%></th>
-      <th><%= t(:Category)%></th>
-      <th><%= t(:Add_info)%></th>
-      <th><%= t(:Music_style)%></th>
-      <th><%= t(:Nighthouse)%></th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<ul class="users">
+  <% @parties.each do |party| %>
+    <%= render party %>
+  <% end %>
+</ul>
 
-  <tbody>
-    <% @parties.each do |party| %>
-      <tr>
-        <td><%= party.name %></td>
-        <td><%= party.category %></td>
-        <td><%= party.add_info %></td>
-        <td><%= party.music_style %></td>
-        <td><%= party.NightHouse_id %></td>
-        <td><%= link_to 'Show', party %></td>
-        <td><%= link_to 'Edit', edit_party_path(party) %></td>
-        <td><%= link_to 'Destroy', party, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Party', new_party_path %>
+<%= will_paginate %>

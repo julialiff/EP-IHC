@@ -1,8 +1,14 @@
-<li id="micropost-<%= party.id %>">
-  <%#= link_to gravatar_for(party.night_house, size: 50), party.night_house %>
-  <span class="user"><%= link_to party.night_house.name, party.night_house %></span>
-  <span class="content"><%= party.add_info %></span>
-  <span class="timestamp">
-    Posted <%= time_ago_in_words(party.created_at) %> ago.
-  </span>
-</li>
+    <li>
+      <div class="col-md-2">
+        <%#= gravatar_for night_house %>
+        Foto
+        </div>
+      <div class="col-md-10">
+        <%= link_to party.name, party %>
+        <h6>
+          <%= party.category %> · <%= party.musicstyle %><br />
+          <%= party.partydate %> · <%= party.partytime %><br />
+          <%= party.night_house.name %> (<%= party.night_house.address %>)
+          </h6>
+      </div>
+    </li>
