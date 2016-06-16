@@ -8,11 +8,11 @@
   </div>
   <div class="col-md-6">
     <br />
-    <span class="glyphicon glyphicon-map-marker"></span> <%= @night_house.city %> - <%= @night_house.state %> | <%= @night_house.address %> - <%= @night_house.neighbourhood %><br />
-    <span class="glyphicon glyphicon-music"></span> <%= @night_house.category %><br />
+    <span class="glyphicon glyphicon-map-marker" style="margin-top:5px;color: #666;"></span> <%= @night_house.city %> - <%= @night_house.state %> | <%= @night_house.address %> - <%= @night_house.neighbourhood %><br />
+    <span class="glyphicon glyphicon-music"      style="margin-top:5px;color: #666;"></span> <%= @night_house.category %><br />
     <% if nhlogged_in? && @current_nh.id == @night_house.id %>
-      <span class="glyphicon glyphicon-lock"></span> <%= @night_house.cnpj %><br />
-      <span class="glyphicon glyphicon-envelope"></span> <%= @night_house.email %><br />
+      <span class="glyphicon glyphicon-lock"     style="margin-top:5px;color: #666;"></span> <%= @night_house.cnpj %><br />
+      <span class="glyphicon glyphicon-envelope" style="margin-top:5px;color: #666;"></span> <%= @night_house.email %><br />
     <% end %>
   </div>
 </div>

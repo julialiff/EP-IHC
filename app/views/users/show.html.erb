@@ -11,14 +11,14 @@
     </div>
     <div class="col-md-6">
       <br />
-      <span class="glyphicon glyphicon-briefcase" style="margin-top: 5px; color: #666;"></span> <%= @user.occupation %><br/>
-      <span class="glyphicon glyphicon-book" style="margin-top: 5px; color: #666;"></span> <%= @user.college %><br/>
-      <span class="glyphicon glyphicon-gift" style="margin-top: 5px; color: #666;"></span> <%= @user.birthdate %><br/>
+      <span class="glyphicon glyphicon-briefcase"  style="margin-top: 5px; color: #666;"></span> <%= @user.occupation %><br/>
+      <span class="glyphicon glyphicon-book"       style="margin-top: 5px; color: #666;"></span> <%= @user.college %><br/>
+      <span class="glyphicon glyphicon-gift"       style="margin-top: 5px; color: #666;"></span> <%= @user.birthdate %><br/>
       <span class="glyphicon glyphicon-map-marker" style="margin-top: 5px; color: #666;"></span> <%= @user.city %> - <%= @user.state %><br/>
       <% if logged_in? && @current_user.id == @user.id %>
         <span class="glyphicon glyphicon-map-marker" style="margin-top: 5px; color: #666;"></span> <%= @user.neighbourhood %> <span class="glyphicon glyphicon-lock" style="color: #666;"></span><br/>
-        <span class="glyphicon glyphicon-envelope" style="margin-top: 5px; color: #666;"></span> <%= @user.email %> <span class="glyphicon glyphicon-lock" style="color: #666;"></span><br/>
-        <span class="glyphicon glyphicon-phone" style="margin-top: 5px; color: #666;"></span> <%= @user.cellphone %> <span class="glyphicon glyphicon-lock" style="color: #666;"></span><br/>
+        <span class="glyphicon glyphicon-envelope"   style="margin-top: 5px; color: #666;"></span> <%= @user.email %> <span class="glyphicon glyphicon-lock" style="color: #666;"></span><br/>
+        <span class="glyphicon glyphicon-phone"      style="margin-top: 5px; color: #666;"></span> <%= @user.cellphone %> <span class="glyphicon glyphicon-lock" style="color: #666;"></span><br/>
       <% end %>
     </div>
   </div>
