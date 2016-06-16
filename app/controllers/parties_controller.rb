@@ -76,6 +76,6 @@ class PartiesController < ApplicationController
     end
 
     def party_params
-      params.require(:party).permit(:name, :category, :addinfo, :musicstyle, :partydate, :partytime)
+      params.require(:party).permit(:name, :category, :addinfo, :musicstyle, :partydate, :partytime, :picture)
     end
 end

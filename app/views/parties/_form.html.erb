@@ -1,5 +1,5 @@
 <div class="row">
-<%= form_for(@party) do |f| %>
+<%= form_for(@party, html: { multipart: true }) do |f| %>
   <%= render 'shared/error_messages_parties' %>
 
   <div class="col-md-6">
@@ -25,6 +25,9 @@
   <div class="col-md-6">
     <%= f.label t(:partytime) %><br />
     <%= f.text_field :partytime, class: 'form-control', placeholder: "Ex.: 23h" %>
+  </div>
+  <div class="col-md-6">
+    <%= f.file_field :picture, class: 'form-control' %>
   </div>
 
 </div>

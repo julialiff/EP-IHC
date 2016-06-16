@@ -1,14 +1,14 @@
     <li>
-      <div class="col-md-2">
+      <div class="col-md-3">
         <%#= gravatar_for night_house %>
-        Foto
+        <% if party.picture? %>
+          <%= image_tag party.picture.url, size: "150" %>
+        <% end %>
         </div>
-      <div class="col-md-10">
-        <%= link_to party.name, party %>
-        <h6>
+      <div class="col-md-9">
+        <h4><%= link_to party.name, party %></h4>
           <%= party.category %> · <%= party.musicstyle %><br />
           <%= party.partydate %> · <%= party.partytime %><br />
-          <%= party.night_house.name %> (<%= party.night_house.address %>)
-          </h6>
+          <%= link_to party.night_house.name, party.night_house %> (<%= party.night_house.address %>)
       </div>
     </li>
