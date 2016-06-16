@@ -1,0 +1,13 @@
+<br />
+<div class="row">
+  <%= form_for(@party, html: { multipart: true }) do |f| %>
+  <div class="col-md-6">
+    <%= f.file_field :pic, class: 'form-control' %>
+  </div>
+  <div class="col-md-3">
+    <%= f.submit "Enviar!", class: "btn btn-sm btn-primary" %>
+  </div>
+</div>
+<% end %>
+
+</div>

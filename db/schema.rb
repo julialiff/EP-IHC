@@ -11,7 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160615221311) do
+ActiveRecord::Schema.define(version: 20160616174639) do
+
+  create_table "checkins", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "party_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "checkins", ["party_id", "created_at"], name: "index_checkins_on_party_id_and_created_at"
+  add_index "checkins", ["party_id"], name: "index_checkins_on_party_id"
+  add_index "checkins", ["user_id", "created_at"], name: "index_checkins_on_user_id_and_created_at"
+  add_index "checkins", ["user_id"], name: "index_checkins_on_user_id"
 
   create_table "night_houses", force: :cascade do |t|
     t.string   "name"

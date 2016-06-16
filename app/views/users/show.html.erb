@@ -1,59 +1,37 @@
 <% provide(:title, @user.name) %>
-<h1>
-  <%= gravatar_for @user %>
-  <%= @user.name %>
-</h1>
-
-
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Name:</strong>
-  <%= @user.name %>
-</p>
-
-<p>
-  <strong>Email:</strong>
-  <%= @user.email %>
-</p>
-
-<p>
-  <strong>Cellphone:</strong>
-  <%= @user.cellphone %>
-</p>
-
-<p>
-  <strong>Photo:</strong>
-  <%= @user.photo %>
-</p>
-
-<p>
-  <strong>Birth date:</strong>
-  <%= @user.birthdate %>
-</p>
-
-<p>
-  <strong>Occupation:</strong>
-  <%= @user.occupation %>
-</p>
-
-<p>
-  <strong>College:</strong>
-  <%= @user.college %>
-</p>
-
-<p>
-  <strong>State:</strong>
-  <%= @user.state %>
-</p>
-
-<p>
-  <strong>City:</strong>
-  <%= @user.city %>
-</p>
-
-<p>
-  <strong>Neighbourhood:</strong>
-  <%= @user.neighbourhood %>
-</p>
-
+<div class="row">
+  <div class="col-md-12">
+    <div class="col-md-6">
+      <div class="col-md-3">
+        <%= gravatar_for @user %>
+      </div>
+      <div class="col-md-9">
+        <h3><%= @user.name %></h3>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <br />
+      <span class="glyphicon glyphicon-briefcase" style="margin-top: 5px; color: #666;"></span> <%= @user.occupation %><br/>
+      <span class="glyphicon glyphicon-book" style="margin-top: 5px; color: #666;"></span> <%= @user.college %><br/>
+      <span class="glyphicon glyphicon-gift" style="margin-top: 5px; color: #666;"></span> <%= @user.birthdate %><br/>
+      <span class="glyphicon glyphicon-map-marker" style="margin-top: 5px; color: #666;"></span> <%= @user.city %> - <%= @user.state %><br/>
+      <% if logged_in? && @current_user.id == @user.id %>
+        <span class="glyphicon glyphicon-map-marker" style="margin-top: 5px; color: #666;"></span> <%= @user.neighbourhood %> <span class="glyphicon glyphicon-lock" style="color: #666;"></span><br/>
+        <span class="glyphicon glyphicon-envelope" style="margin-top: 5px; color: #666;"></span> <%= @user.email %> <span class="glyphicon glyphicon-lock" style="color: #666;"></span><br/>
+        <span class="glyphicon glyphicon-phone" style="margin-top: 5px; color: #666;"></span> <%= @user.cellphone %> <span class="glyphicon glyphicon-lock" style="color: #666;"></span><br/>
+      <% end %>
+    </div>
+  </div>
+</div>
+<hr />
+<div class="row" style="margin-top:20px;">
+  <div class=col-md-12>
+    <h3>Festas que foi</h3>
+  </div>
+</div>
+<hr />
+<div class="row">
+  <div class=col-md-12>
+    <h3>Fotos postadas</h3>
+  </div>
+</div>

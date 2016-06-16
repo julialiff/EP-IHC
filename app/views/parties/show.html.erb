@@ -8,15 +8,15 @@
   </div>
   <div class="col-md-6">
     <h4><%= link_to @party.name, @party %></h4>
-      <span class="glyphicon glyphicon-glass"></span> <%= @party.category %><br />
-      <span class="glyphicon glyphicon-music"></span> <%= @party.musicstyle %><br />
-      <span class="glyphicon glyphicon-calendar"></span> <%= @party.partydate %> · <%= @party.partytime %><br />
-      <span class="glyphicon glyphicon-map-marker"></span> <%= link_to @party.night_house.name, @party.night_house %> (<%= @party.night_house.address %>)<br />
-      <span class="glyphicon glyphicon-info-sign"></span> <%= @party.addinfo %>
+      <span class="glyphicon glyphicon-glass" style="margin-top: 5px;"></span> <%= @party.category %><br />
+      <span class="glyphicon glyphicon-music" style="margin-top: 5px;"></span> <%= @party.musicstyle %><br />
+      <span class="glyphicon glyphicon-calendar" style="margin-top: 5px;"></span> <%= @party.partydate %> · <%= @party.partytime %><br />
+      <span class="glyphicon glyphicon-map-marker" style="margin-top: 5px;"></span> <%= link_to @party.night_house.name, @party.night_house %> (<%= @party.night_house.address %>)<br />
+      <span class="glyphicon glyphicon-info-sign" style="margin-top: 5px;"></span> <%= @party.addinfo %>
    </div>
 </div>
 <br />
-<% if @party.partydate == Date.today || @party.partydate == Date.yesterday %>
+<% if logged_in? && (@party.partydate == Date.today || @party.partydate == Date.yesterday) %>
   <div class="row">
     <div class="col-md-6">
       <%= link_to "Check-in <i class='glyphicon glyphicon-ok'></i>" .html_safe, "#", class: "btn btn-md btn-primary" %>
@@ -24,7 +24,9 @@
     <div class="col-md-6" ng-app>
       <button class="btn btn-md btn-primary" ng-click="send = !send">Enviar foto <i class='glyphicon glyphicon-camera'></i></button>
       <%#= link_to "Enviar foto <i class='glyphicon glyphicon-camera'></i>" .html_safe, "#", class: "btn btn-md btn-primary" %>
-      <div ng-if="send">show</div>
+      <div ng-if="send">
+        <%= render 'upload_pic' %>
+      </div>
     </div>
   </div>
 <% end %>
