@@ -1,4 +1,4 @@
 class Photo < ActiveRecord::Base
   belongs_to :user
-  belongs_to :parties
+  belongs_to :party
 end

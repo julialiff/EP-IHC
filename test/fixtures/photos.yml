@@ -1,11 +1,11 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  pic: 
+  pic: MyString
   user_id: 
-  parties_id: 
+  party_id: 
 
 two:
-  pic: 
+  pic: MyString
   user_id: 
-  parties_id: 
+  party_id: 

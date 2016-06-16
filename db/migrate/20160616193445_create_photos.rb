@@ -3,7 +3,7 @@ class CreatePhotos < ActiveRecord::Migration
     create_table :photos do |t|
       t.string :pic
       t.references :user, index: true, foreign_key: true
-      t.references :parties, index: true, foreign_key: true
+      t.references :party, index: true, foreign_key: true
 
       t.timestamps null: false
     end
