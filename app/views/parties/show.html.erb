@@ -1,29 +1,30 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Name:</strong>
-  <%= @party.name %>
-</p>
-
-<p>
-  <strong>Category:</strong>
-  <%= @party.category %>
-</p>
-
-<p>
-  <strong>Add info:</strong>
-  <%= @party.add_info %>
-</p>
-
-<p>
-  <strong>Music style:</strong>
-  <%= @party.music_style %>
-</p>
-
-<p>
-  <strong>Nighthouse:</strong>
-  <%= @party.NightHouse_id %>
-</p>
-
-<%= link_to 'Edit', edit_party_path(@party) %> |
-<%= link_to 'Back', parties_path %>
+<% provide(:title, @party.name) %>
+<div class="row">
+  <div class="col-md-6">
+    <% if @party.picture? %>
+      <%= image_tag @party.picture.url, size: "150" %>
+    <% end %>
+  </div>
+  <div class="col-md-6">
+    <h4><%= link_to @party.name, @party %></h4>
+      <span class="glyphicon glyphicon-glass"      style="margin-top: 5px; color: #666;"></span> <%= @party.category %><br />
+      <span class="glyphicon glyphicon-music"      style="margin-top: 5px; color: #666;"></span> <%= @party.musicstyle %><br />
+      <span class="glyphicon glyphicon-calendar"   style="margin-top: 5px; color: #666;"></span> <%= @party.partydate %> · <%= @party.partytime %><br />
+      <span class="glyphicon glyphicon-map-marker" style="margin-top: 5px; color: #666;"></span> <%= link_to @party.night_house.name, @party.night_house %> (<%= @party.night_house.address %>)<br />
+      <span class="glyphicon glyphicon-info-sign"  style="margin-top: 5px; color: #666;"></span> <%= @party.addinfo %>
+   </div>
+</div>
+<br />
+<% if logged_in? && (@party.partydate == Date.today || @party.partydate == Date.yesterday) %>
+  <div class="row">
+    <div class="col-md-6">
+      <%= link_to "Check-in <i class='glyphicon glyphicon-ok'></i>" .html_safe, "#", class: "btn btn-md btn-primary" %>
+    </div>
+    <div class="col-md-6" ng-app>
+      <button class="btn btn-md btn-primary" ng-click="send = !send">Enviar foto <i class='glyphicon glyphicon-camera'></i></button>
+      <div ng-if="send">
+        <%= render 'upload_pic' %>
+      </div>
+    </div>
+  </div>
+<% end %>

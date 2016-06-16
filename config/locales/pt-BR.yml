@@ -20,8 +20,8 @@ pt-BR:
           Birthdate: Data de Nascimento
           Occupation: Ocupação
           College: Faculdade
-          Add_info: Informações adicionais
-          Music_style: Estilo musical
+          Addinfo: Informações adicionais
+          Musicstyle: Estilo musical
           Nighthouse: Casa noturna
           Password: Senha
           Password_confirmation: Confirmação de senha
@@ -41,11 +41,13 @@ pt-BR:
   Birthdate: Data de Nascimento
   Occupation: Ocupação
   College: Faculdade
-  Add_info: Informações adicionais
-  Music_style: Estilo musical
+  Addinfo: Informações adicionais
+  Musicstyle: Estilo musical
   Nighthouse: Casa noturna
   Password: Senha
   Password_confirmation: Confirmação de senha
+  Partydate: Data
+  Partytime: Hora
   name: Nome
   cnpj: CNPJ
   email: E-mail
@@ -59,15 +61,21 @@ pt-BR:
   birthdate: Data de Nascimento
   occupation: Ocupação
   college: Faculdade
-  add_info: Informações adicionais
-  music_style: Estilo musical
+  addinfo: Informações adicionais
+  musicstyle: Estilo musical
   nighthouse: Casa noturna
   password: Senha
   password_confirmation: Confirmação de senha
+  partydate: Data
+  partytime: Hora
   will_paginate:
     previous_label: <span class="glyphicon glyphicon-menu-left"></span>
     next_label: <span class="glyphicon glyphicon-menu-right"></span>
   date:
+    order:
+      - :day
+      - :month
+      - :year
     abbr_day_names:
     - Dom
     - Seg

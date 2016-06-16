@@ -11,7 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160613175318) do
+ActiveRecord::Schema.define(version: 20160616174639) do
+
+  create_table "checkins", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "party_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "checkins", ["party_id", "created_at"], name: "index_checkins_on_party_id_and_created_at"
+  add_index "checkins", ["party_id"], name: "index_checkins_on_party_id"
+  add_index "checkins", ["user_id", "created_at"], name: "index_checkins_on_user_id_and_created_at"
+  add_index "checkins", ["user_id"], name: "index_checkins_on_user_id"
 
   create_table "night_houses", force: :cascade do |t|
     t.string   "name"
@@ -33,12 +45,31 @@ ActiveRecord::Schema.define(version: 20160613175318) do
   create_table "parties", force: :cascade do |t|
     t.string   "name"
     t.string   "category"
-    t.string   "add_info"
-    t.string   "music_style"
+    t.string   "addinfo"
+    t.string   "musicstyle"
     t.integer  "NightHouse_id"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+    t.date     "partydate"
+    t.string   "partytime"
+    t.integer  "night_house_id"
+    t.string   "picture"
   end
+
+  add_index "parties", ["night_house_id"], name: "index_parties_on_night_house_id"
+
+  create_table "photos", force: :cascade do |t|
+    t.string   "pic"
+    t.integer  "user_id"
+    t.integer  "parties_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "photos", ["parties_id"], name: "index_photos_on_parties_id"
+  add_index "photos", ["user_id", "created_at"], name: "index_photos_on_user_id_and_created_at"
+  add_index "photos", ["user_id"], name: "index_photos_on_user_id"
+  add_index "photos", [nil, "created_at"], name: "index_photos_on_party_id_and_created_at"
 
   create_table "users", force: :cascade do |t|
     t.string   "name"

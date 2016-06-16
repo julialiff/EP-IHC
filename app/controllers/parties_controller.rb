@@ -4,7 +4,7 @@ class PartiesController < ApplicationController
   # GET /parties
   # GET /parties.json
   def index
-    @parties = Party.all
+    @parties = Party.paginate(page: params[:page], per_page: 10)
   end
 
   # GET /parties/1
@@ -24,17 +24,25 @@ class PartiesController < ApplicationController
   # POST /parties
   # POST /parties.json
   def create
-    @party = Party.new(party_params)
-
-    respond_to do |format|
-      if @party.save
-        format.html { redirect_to @party, notice: 'Party was successfully created.' }
-        format.json { render :show, status: :created, location: @party }
-      else
-        format.html { render :new }
-        format.json { render json: @party.errors, status: :unprocessable_entity }
-      end
+    @party = current_nh.parties.build(party_params)
+    if @party.save
+      flash[:success] = "Festa criada!"
+      redirect_to @party
+    else
+      # redirect_to newparty_path
+      render 'new'
     end
+    # @party = Party.new(party_params)
+
+    # respond_to do |format|
+    #   if @party.save
+    #     format.html { redirect_to @party, notice: 'Party was successfully created.' }
+    #     format.json { render :show, status: :created, location: @party }
+    #   else
+    #     format.html { render :new }
+    #     format.json { render json: @party.errors, status: :unprocessable_entity }
+    #   end
+    # end
   end
 
   # PATCH/PUT /parties/1
@@ -67,8 +75,7 @@ class PartiesController < ApplicationController
       @party = Party.find(params[:id])
     end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
     def party_params
-      params.require(:party).permit(:name, :category, :add_info, :music_style, :NightHouse_id)
+      params.require(:party).permit(:name, :category, :addinfo, :musicstyle, :partydate, :partytime, :picture)
     end
 end

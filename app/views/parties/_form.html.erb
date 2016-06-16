@@ -1,37 +1,37 @@
-<%= form_for(@party) do |f| %>
-  <% if @party.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@party.errors.count, "error") %> prohibited this party from being saved:</h2>
+<div class="row">
+<%= form_for(@party, html: { multipart: true }) do |f| %>
+  <%= render 'shared/error_messages_parties' %>
 
-      <ul>
-      <% @party.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+  <div class="col-md-6">
+    <%= f.label t(:name) %><br />
+    <%= f.text_field :name, class: 'form-control' %>
+  </div>
+  <div class="col-md-6">
+    <%= f.label t(:category) %><br>
+    <%= f.text_field :category, class: 'form-control' %>
+  </div>
+  <div class="col-md-6">
+    <%= f.label t(:addinfo) %><br>
+    <%= f.text_field :addinfo, class: 'form-control' %>
+  </div>
+  <div class="col-md-6">
+    <%= f.label t(:musicstyle) %><br>
+    <%= f.select(:musicstyle, [['', ''], ['Alternativa', 'Alternativa'], ['Anos 70/80', 'Anos 70/80'], ['Eletrônica', 'Eletrônica'], ['Indie', 'Indie'], ['Pop', 'Pop'], ['Rap', 'Rap'], ['Rock', 'Rock'], ['Sertanejo', 'Sertanejo']], {}, { :class => 'form-control' }) %>
+  </div>
+  <div class="col-md-6">
+    <%= f.label t(:partydate) %><br />
+    <%= f.date_field :partydate, class: "form-control" %>
+  </div>
+  <div class="col-md-6">
+    <%= f.label t(:partytime) %><br />
+    <%= f.text_field :partytime, class: 'form-control', placeholder: "Ex.: 23h" %>
+  </div>
+  <div class="col-md-6">
+    <%= f.file_field :picture, class: 'form-control' %>
+  </div>
 
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :category %><br>
-    <%= f.text_field :category %>
-  </div>
-  <div class="field">
-    <%= f.label :add_info %><br>
-    <%= f.text_field :add_info %>
-  </div>
-  <div class="field">
-    <%= f.label :music_style %><br>
-    <%= f.text_field :music_style %>
-  </div>
-  <div class="field">
-    <%= f.label :NightHouse_id %><br>
-    <%= f.number_field :NightHouse_id %>
-  </div>
+</div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Criar festa", class: "btn btn-primary" %>
   </div>
 <% end %>

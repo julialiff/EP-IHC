@@ -13,6 +13,7 @@ class NightHousesController < ApplicationController
   # GET /night_houses/1.json
   def show
     @nightHouse =  NightHouse.find(params[:id])
+    @parties = @nightHouse.parties.paginate(page: params[:page])
   end
 
   # GET /night_houses/new

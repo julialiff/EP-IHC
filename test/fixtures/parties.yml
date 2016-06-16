@@ -3,13 +3,13 @@
 one:
   name: MyString
   category: MyString
-  add_info: MyString
-  music_style: MyString
+  addinfo: MyString
+  musicstyle: MyString
   NightHouse_id: 1
 
 two:
   name: MyString
   category: MyString
-  add_info: MyString
-  music_style: MyString
+  addinfo: MyString
+  musicstyle: MyString
   NightHouse_id: 1

@@ -13,6 +13,8 @@ Rails.application.routes.draw do
   get    'loginnh'  => 'nhsessions#new'
   post   'loginnh'  => 'nhsessions#create'
   delete 'logoutnh' => 'nhsessions#destroy'
+  get    'newparty' => 'parties#new'
+  post   'newparty' => 'parties#new'
 
   resources :parties
   resources :night_houses
