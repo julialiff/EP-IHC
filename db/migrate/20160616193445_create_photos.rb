@@ -8,6 +8,6 @@ class CreatePhotos < ActiveRecord::Migration
       t.timestamps null: false
     end
     add_index :photos, [:user_id, :created_at]
-    add_index :photos, [:party_id, :created_at]
+    add_index :photos , [:party_id, :created_at]
   end
 end
