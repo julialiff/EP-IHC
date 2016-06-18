@@ -7,12 +7,16 @@
       </div>
       <div class="col-md-9">
         <h3><%= @user.name %></h3>
+        <span class="glyphicon glyphicon-briefcase"  style="margin-top: 5px; color: #666;"></span> <%= @user.occupation %><br/>
+        <span class="glyphicon glyphicon-book"       style="margin-top: 5px; color: #666;"></span> <%= @user.college %><br/>
       </div>
     </div>
     <div class="col-md-6">
       <br />
-      <span class="glyphicon glyphicon-briefcase"  style="margin-top: 5px; color: #666;"></span> <%= @user.occupation %><br/>
-      <span class="glyphicon glyphicon-book"       style="margin-top: 5px; color: #666;"></span> <%= @user.college %><br/>
+      <% if !(logged_in? && @current_user.id == @user.id) %>
+        <br />
+        <br />
+      <% end %>
       <span class="glyphicon glyphicon-gift"       style="margin-top: 5px; color: #666;"></span> <%= @user.birthdate %><br/>
       <span class="glyphicon glyphicon-map-marker" style="margin-top: 5px; color: #666;"></span> <%= @user.city %> - <%= @user.state %><br/>
       <% if logged_in? && @current_user.id == @user.id %>
