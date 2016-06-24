@@ -140,3 +140,7 @@ a.navbar-collapse:hover, a.navbar-default:hover{
 .navbar-brand{
   padding: 10px;
 }
+
+.navbar-default .navbar-nav .open a, .navbar-default .navbar-nav .open a:hover, .navbar-default .navbar-nav .open a:focus, .navbar-right .dropdown-menu{
+  background-color: #333;
+}
