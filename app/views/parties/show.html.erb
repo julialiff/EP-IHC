@@ -15,11 +15,28 @@
    </div>
 </div>
 <br />
+
 <% if logged_in? && (@party.partydate == Date.today || @party.partydate == Date.yesterday) %>
   <div class="row">
     <div class="col-md-6">
-      <%= link_to "Check-in <i class='glyphicon glyphicon-ok'></i>" .html_safe, "#", class: "btn btn-md btn-primary" %>
+      <%#= form_for Checkin.new, :url => { :controller => "checkins_controller", :action => "create" }, :html => {:method => :post} do |f| %>
+      <%#= form_for Checkin.new, :url => create_checkin_path(@checkin), :html => {:method => :post} do |f| %>
+      <%= form_for @checkin, :url => create_checkin_path(@checkin), :html => {:method => :post} do |f| %>
+        <div><%= hidden_field_tag :user_id, @current_user.id %></div>
+        <div><%= hidden_field_tag :party_id, @party.id %></div>
+        <% puts @party.id %>
+        <% puts @current_user.id %>
+        <%= button_tag(type: 'submit', class: "btn btn-md btn-primary") do %>
+          Check-in <span class="glyphicon glyphicon-ok"></span>
+        <% end %>
+        <%#= f.submit "Check-in", class: "btn btn-md btn-primary" %>
+      <% end %>
+
+
+      <%#= link_to "Check-in <i class='glyphicon glyphicon-ok'></i>" .html_safe, "#", class: "btn btn-md btn-primary" %>
     </div>
+
+
     <div class="col-md-6" ng-app>
       <button class="btn btn-md btn-primary" ng-click="send = !send">Enviar foto <i class='glyphicon glyphicon-camera'></i></button>
       <div ng-if="send">
