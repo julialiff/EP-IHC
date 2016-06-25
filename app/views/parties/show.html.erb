@@ -1,41 +1,58 @@
 <% provide(:title, @party.name) %>
 <div class="row">
-  <div class="col-md-6">
+  <div class="col-md-4">
     <% if @party.picture? %>
       <%= image_tag @party.picture.url, size: "150" %>
     <% end %>
   </div>
-  <div class="col-md-6">
-    <h4><%= link_to @party.name, @party %></h4>
+  <div class="col-md-8">
+    <br />
+    <br />
+    <div class="col-md-6">
+      <h3><%= link_to @party.name, @party %></h3>
       <% if logged_in? && checked_in?(@party.id, @current_user.id) %>
-          <% if @party.partydate == Date.today || @party.partydate == Date.yesterday %>
-            <span class="label label-info">Você está nesta festa!</span>
-          <% else %>
-            <span class="label label-info">Você foi nesta festa!</span>
-          <% end %>
+        <% if @party.partydate == Date.today || @party.partydate == Date.yesterday %>
+          <span class="label label-info">Você está nesta festa!</span>
+        <% else %>
+          <span class="label label-info">Você foi nesta festa!</span>
+        <% end %>
       <% end %>
       <br />
-      <span class="glyphicon glyphicon-user"       style="margin-top: 5px; color: #666;"></span>
-      <%= count_checkin(@party.id) %><% if count_checkin(@party.id) == 1 %> pessoa foi <% else %> pessoas foram <% end %><br />
-      <span class="glyphicon glyphicon-glass"      style="margin-top: 5px; color: #666;"></span> <%= @party.category %><br />
       <span class="glyphicon glyphicon-music"      style="margin-top: 5px; color: #666;"></span> <%= @party.musicstyle %><br />
       <span class="glyphicon glyphicon-calendar"   style="margin-top: 5px; color: #666;"></span> <%= @party.partydate %> · <%= @party.partytime %><br />
+    </div>
+
+    <div class="col-md-6">
+      <br />
+      <span class="glyphicon glyphicon-glass"      style="margin-top: 5px; color: #666;"></span> <%= @party.category %><br />
+      <span class="glyphicon glyphicon-user"       style="margin-top: 5px; color: #666;"></span>
+      <%= count_checkin(@party.id) %><% if count_checkin(@party.id) == 1 %> pessoa foi <% else %> pessoas foram <% end %><br />
       <span class="glyphicon glyphicon-map-marker" style="margin-top: 5px; color: #666;"></span> <%= link_to @party.night_house.name, @party.night_house %> (<%= @party.night_house.address %>)<br />
       <span class="glyphicon glyphicon-info-sign"  style="margin-top: 5px; color: #666;"></span> <%= @party.addinfo %><br />
+    </div>
    </div>
 </div>
 <br />
 
-<%# if logged_in? && (@party.partydate == Date.today || @party.partydate == Date.yesterday) %>
 <% if logged_in? %>
-  <div class="row">
-    <div class="col-md-6" ng-app>
-        <% if checked_in?(@party.id, @current_user.id) %>
+  <div class="row" ng-app>
+      <% if checked_in?(@party.id, @current_user.id) %>
+        <div class="col-md-6">
             <button class="btn btn-md btn-primary" ng-click="send = !send">Enviar foto <i class='glyphicon glyphicon-camera'></i></button>
-              <div ng-if="send">
-                <%= render 'upload_pic' %>
-              </div><br />
+            <div ng-if="send">
+              <%= render 'upload_pic' %>
+            </div><br />
+        </div>
+        <div class="col-md-6">
+          <button class="btn btn-md btn-primary" ng-click="sendv = !sendv">Enviar vídeo <i class='glyphicon glyphicon-film'></i></button>
+            <div ng-if="sendv">
+              send video
+              <%#= render 'upload_vid' %>
+            </div>
+        </div>
         <% else %>
+          <div class="col-md-12">
+
           <% if @party.partydate == Date.today || @party.partydate == Date.yesterday %>
             <%= form_for @checkin, :url => create_checkin_path(@checkin), :html => {:method => :post} do |f| %>
               <%= hidden_field_tag :user_id, @current_user.id %>
@@ -45,11 +62,8 @@
             <% end %>
           <% end %>
         <% end %>
+          </div>
       <% end %>
-    </div>
-    <div class="col-md-6">
-      <button class="btn btn-md btn-primary" ng-click="sendv = !sendv">Enviar vídeo <i class='glyphicon glyphicon-film'></i></button>
-    </div>
 
 
   </div>
