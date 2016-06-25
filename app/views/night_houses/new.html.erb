@@ -1,5 +1,6 @@
 <% provide(:title, 'Cadastro') %>
 <h1>Cadastre-se!</h1>
+<h6 style="color: #F00">*Por enquanto disponível apenas para baladas em São Paulo</h6>
 <div class="row">
     <%= form_for(@night_house) do |f| %>
     <%= render 'shared/error_messages_night_house' %>
@@ -27,12 +28,12 @@
 
       <div class="col-md-6">
         <%= f.label :state, t(:state) %><br />
-        <%= f.text_field :state, class: 'form-control' %>
+        <%= f.text_field :state, class: 'form-control', :readonly => true, :value => 'SP' %>
       </div>
 
       <div class="col-md-6">
         <%= f.label :city, t(:city) %><br />
-        <%= f.text_field :city, class: 'form-control' %>
+        <%= f.text_field :city, class: 'form-control', :readonly => true, :value => 'São Paulo' %>
       </div>
 
       <div class="col-md-6">

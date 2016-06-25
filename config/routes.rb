@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'checkins/new'
+
   get 'nhsessions/new'
 
   get 'sessions/new'
@@ -19,6 +21,10 @@ Rails.application.routes.draw do
   resources :parties
   resources :night_houses
   resources :users
+
+  get '/checkins/create' => 'checkins#create', :as => :create_checkin
+  post "checkins/create"
+  resources :checkins
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

@@ -1,28 +1,21 @@
 class PartiesController < ApplicationController
   before_action :set_party, only: [:show, :edit, :update, :destroy]
 
-  # GET /parties
-  # GET /parties.json
   def index
     @parties = Party.paginate(page: params[:page], per_page: 10)
   end
 
-  # GET /parties/1
-  # GET /parties/1.json
   def show
+    @checkin = Checkin.new
   end
 
-  # GET /parties/new
   def new
     @party = Party.new
   end
 
-  # GET /parties/1/edit
   def edit
   end
 
-  # POST /parties
-  # POST /parties.json
   def create
     @party = current_nh.parties.build(party_params)
     if @party.save
@@ -32,21 +25,8 @@ class PartiesController < ApplicationController
       # redirect_to newparty_path
       render 'new'
     end
-    # @party = Party.new(party_params)
-
-    # respond_to do |format|
-    #   if @party.save
-    #     format.html { redirect_to @party, notice: 'Party was successfully created.' }
-    #     format.json { render :show, status: :created, location: @party }
-    #   else
-    #     format.html { render :new }
-    #     format.json { render json: @party.errors, status: :unprocessable_entity }
-    #   end
-    # end
   end
 
-  # PATCH/PUT /parties/1
-  # PATCH/PUT /parties/1.json
   def update
     respond_to do |format|
       if @party.update(party_params)
@@ -59,8 +39,6 @@ class PartiesController < ApplicationController
     end
   end
 
-  # DELETE /parties/1
-  # DELETE /parties/1.json
   def destroy
     @party.destroy
     respond_to do |format|

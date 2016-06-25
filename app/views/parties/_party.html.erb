@@ -2,7 +2,9 @@
       <div class="col-md-3">
         <%#= gravatar_for night_house %>
         <% if party.picture? %>
-          <%= image_tag party.picture.url, size: "150" %>
+          <%= link_to party do %>
+            <%= image_tag party.picture.url, size: "150" %>
+          <% end %>
         <% end %>
         </div>
       <div class="col-md-9">
