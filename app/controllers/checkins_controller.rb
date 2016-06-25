@@ -7,15 +7,15 @@ class CheckinsController < ApplicationController
     @party_id = params[:party_id]
     @user_id = params[:user_id]
     @checkin = Checkin.new(checkin_params)
+    @party = Party.find(@party_id)
     puts @checkin
     if @checkin.save
       flash[:success] = "Check-in realizado!"
-      redirect_to "parties/#{@party_id}"
+      redirect_to @party
     else
-      render 'new'
+      redirect_to "parties/#{@party_id}"
     end
   end
-
 
   private
 
