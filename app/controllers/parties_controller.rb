@@ -7,6 +7,7 @@ class PartiesController < ApplicationController
 
   def show
     @checkin = Checkin.new
+    @photo = Photo.new
   end
 
   def new
