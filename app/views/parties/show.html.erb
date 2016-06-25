@@ -33,11 +33,11 @@
    </div>
 </div>
 <br />
-
+<hr />
 <% if logged_in? %>
   <div class="row" ng-app>
       <% if checked_in?(@party.id, @current_user.id) %>
-        <div class="col-md-6">
+        <div class="col-md-4">
             <button class="btn btn-md btn-primary" ng-click="send = !send">Enviar foto <i class='glyphicon glyphicon-camera'></i></button>
             <div ng-if="send">
               <%= render 'upload_pic' %>
