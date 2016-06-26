@@ -29,7 +29,7 @@ Rails.application.routes.draw do
   get '/checkins/create' => 'checkins#create', :as => :create_checkin
   post "checkins/create"
 
-  get '/photos/create' => 'photos#create', :as => :create_photo
+  get '/photos/create' => 'photos#create', :as => :create_photo, :new => { :upload => :pic }
   post "photos/create"
 
 

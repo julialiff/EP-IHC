@@ -6,15 +6,23 @@ class PhotosController < ApplicationController
   def create
     @party_id = params[:party_id]
     @user_id = params[:user_id]
-    @pic = params[:pic]
+    @pic = params[:photo]
+    ap params[:photo]
 
-    @photo = Photo.new(photo_params)
+
+    # @photo = Photo.new(photo_params)
+    @photo = Photo.new
+    @photo.party_id = @party_id
+    @photo.user_id = @user_id
+    @photo.pic = params[:photo][:pic]
     puts '***********************'
     puts @party_id
     puts '------------------------'
     puts @user_id
     puts '------------------------'
-    puts @pic
+    ap params[:photo]
+    puts '######'
+    ap params[:photo][:pic]
     puts '------------------------'
     puts @photo
     puts '***********************'

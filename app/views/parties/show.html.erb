@@ -68,3 +68,7 @@
 
   </div>
 <% end %>
+
+<% Photo.all.each do |p| %>
+  <%= image_tag p.pic %>
+<% end %>

@@ -19,6 +19,7 @@ class PartiesController < ApplicationController
 
   def create
     @party = current_nh.parties.build(party_params)
+    puts @party.picture
     if @party.save
       flash[:success] = "Festa criada!"
       redirect_to @party
