@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  yturl: MyString
+  user_id_id: 
+  party_id_id: 
+
+two:
+  yturl: MyString
+  user_id_id: 
+  party_id_id: 

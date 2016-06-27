@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'videos/new'
+
   get 'photos/new'
 
   get 'checkins/new'
