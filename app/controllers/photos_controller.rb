@@ -15,17 +15,17 @@ class PhotosController < ApplicationController
     @photo.party_id = @party_id
     @photo.user_id = @user_id
     @photo.pic = params[:photo][:pic]
-    puts '***********************'
-    puts @party_id
-    puts '------------------------'
-    puts @user_id
-    puts '------------------------'
-    ap params[:photo]
-    puts '######'
-    ap params[:photo][:pic]
-    puts '------------------------'
-    puts @photo
-    puts '***********************'
+    # puts '***********************'
+    # puts @party_id
+    # puts '------------------------'
+    # puts @user_id
+    # puts '------------------------'
+    # ap params[:photo]
+    # puts '######'
+    # ap params[:photo][:pic]
+    # puts '------------------------'
+    # puts @photo
+    # puts '***********************'
 
     @party = Party.find(@party_id)
     puts @party

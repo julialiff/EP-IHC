@@ -8,6 +8,7 @@ class PartiesController < ApplicationController
   def show
     @checkin = Checkin.new
     @photo = Photo.new
+    @photos = Photo.where(party_id: @party.id)
   end
 
   def new
