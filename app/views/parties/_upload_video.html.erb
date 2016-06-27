@@ -1,1 +1,14 @@
-_upload_video.html.erb
+<br />
+<div class="row">
+  <%= form_for @video, :url => create_video_path(@video), :html => { :method => :post } do |f| %>
+  <div class="col-md-6">
+    <%= hidden_field_tag :party_id, @party.id %>
+    <%= hidden_field_tag :user_id,  @current_user.id %>
+    <%= f.text_field     :yturl, class: 'form-control', placeholder: 'http://youtube.com/watch?v=aaaaaa' %>
+    <h6 style="color:#F00">*Faça upload do vídeo no youtube e envie o link</h6>
+  </div>
+  <div class="col-md-3">
+    <%= f.submit "Enviar!", class: "btn btn-sm btn-primary" %>
+  </div>
+</div>
+<% end %>
