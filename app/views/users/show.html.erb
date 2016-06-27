@@ -31,11 +31,27 @@
 <div class="row" style="margin-top:20px;">
   <div class=col-md-12>
     <h3>Festas que foi</h3>
+    <row style="text-align:center;">
+    <% @checkins.each do |ck| %>
+      <div class="col-md-2">
+        <%= image_tag ck.party.picture, size: '150' %><br />
+        <h6><%= link_to ck.party.name, ck.party %> @ <%= link_to ck.party.night_house.name, ck.party.night_house %></h6>
+      </div>
+    <% end %>
+    </row>
   </div>
 </div>
 <hr />
 <div class="row">
   <div class=col-md-12>
     <h3>Fotos postadas</h3>
+    <row style="text-align:center;">
+    <% @photos.each do |p| %>
+      <div class="col-md-2">
+        <%= image_tag p.pic, size: '150' %><br />
+        <h6 style="margin-top:10px;"><%= link_to p.party.name, p.party %> @ <%= link_to p.party.night_house.name, p.party.night_house %></h6>
+      </div>
+    <% end %>
+  </row>
   </div>
 </div>

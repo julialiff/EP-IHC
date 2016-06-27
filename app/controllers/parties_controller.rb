@@ -8,6 +8,7 @@ class PartiesController < ApplicationController
   def show
     @checkin = Checkin.new
     @photo = Photo.new
+    @photos = Photo.where(party_id: @party.id)
   end
 
   def new
@@ -19,6 +20,7 @@ class PartiesController < ApplicationController
 
   def create
     @party = current_nh.parties.build(party_params)
+    puts @party.picture
     if @party.save
       flash[:success] = "Festa criada!"
       redirect_to @party

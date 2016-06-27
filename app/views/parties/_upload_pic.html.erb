@@ -1,12 +1,12 @@
 <br />
 <div class="row">
-  <%= form_for @photo, :url => create_checkin_path(@checkin), :html => {:method => :post,  multipart: true } do |f| %>
+  <%= form_for @photo, :url => create_photo_path(@photo), :html => { multipart: true } do |f| %>
 
   <%# form_for(@photo, html: { multipart: true }) do |f| %>
   <div class="col-md-6">
     <%= hidden_field_tag :party_id, @party.id %>
-    <%= hidden_field_tag :user_id, @current_user.id %>
-    <%= f.file_field :pic, class: 'form-control' %>
+    <%= hidden_field_tag :user_id,  @current_user.id %>
+    <%= f.file_field     :pic, class: 'form-control' %>
   </div>
   <div class="col-md-3">
     <%= f.submit "Enviar!", class: "btn btn-sm btn-primary" %>
