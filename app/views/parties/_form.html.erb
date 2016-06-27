@@ -11,8 +11,8 @@
     <%= f.text_field :category, class: 'form-control' %>
   </div>
   <div class="col-md-6">
-    <%= f.label t(:addinfo) %><br>
-    <%= f.text_field :addinfo, class: 'form-control' %>
+    <%= f.label 'Preço' %><br>
+    <%= f.text_field :addinfo, class: 'form-control', :data => {:mask => 'R$ 99,99'} %>
   </div>
   <div class="col-md-6">
     <%= f.label t(:musicstyle) %><br>

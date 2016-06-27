@@ -1,20 +1,8 @@
-<div class="row">
-      <section class="user_info">
-          <h3> Festas </h3>
-          <ul class="users">
-            <% Party.all.each do |party| %>
-              <%= render party %>
-            <% end %>
-          </ul>
-          <%#= will_paginate @parties %>
-      </section>
-  </div>
-
 <% if logged_in? %>
     <div class="row">
     <aside class="col-md-4">
       <section class="user_info">
-        USER SHIT
+        USER
       </section>
       <section class="micropost_form">
         <%#= render 'shared/micropost_form' %>
@@ -36,16 +24,18 @@
       </section>
   </div>
 <% else %>
-  <p>
-    Deseja encontrar festas próximas a você?<br />
-    <%= link_to "Cadastre-se!", signup_path, class: "btn btn-lg btn-primary" %>
-  </p>
-  <p>
-    É dono de uma balada e deseja promover suas festas?<br />
-    <%= link_to "Cadastre-se!", signupnh_path, class: "btn btn-lg btn-primary" %>
-  </p>
+  <h1>BEM-VINDO!</h1>
+  <p>Deseja encontrar festas e eventos próximos de você? Faça <%= link_to "Login", login_path %> ou <%= link_to "Cadastre-se", signup_path %>! É dono de uma balada e deseja divulgar suas festas aqui? <%= link_to "Cadastre-se!", signupnh_path %></p>
 <% end %>
 
-
-
-
+<div class="row">
+  <section class="user_info">
+    <h3> Próximos eventos: </h3>
+      <ul class="users">
+        <% Party.limit(5).each do |party| %>
+          <%= render party %>
+        <% end %>
+      </ul>
+      <%#= will_paginate @parties %>
+  </section>
+</div>

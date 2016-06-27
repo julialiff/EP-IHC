@@ -4,7 +4,7 @@
   <div class="col-md-6">
     <%= hidden_field_tag :party_id, @party.id %>
     <%= hidden_field_tag :user_id,  @current_user.id %>
-    <%= f.text_field     :yturl, class: 'form-control', placeholder: 'http://youtube.com/watch?v=aaaaaa' %>
+    <%= f.text_field     :yturl, class: 'form-control', placeholder: 'http://youtube.com/watch?v=aaaaaa', :required => true %>
     <h6 style="color:#F00">*Faça upload do vídeo no youtube e envie o link</h6>
   </div>
   <div class="col-md-3">
