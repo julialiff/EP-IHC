@@ -1,4 +1,6 @@
 class Party < ActiveRecord::Base
+  has_many :checkins
+  has_many :users,through: :checkins
   belongs_to :night_house
   default_scope -> { order(created_at: :desc) }
   mount_uploader :picture, PictureUploader
