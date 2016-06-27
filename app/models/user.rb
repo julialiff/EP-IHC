@@ -15,6 +15,8 @@ class User < ActiveRecord::Base
                     format: { with: VALID_EMAIL_REGEX },
                     uniqueness: { case_sensitive: false }
 	has_many :checkins
+  has_many :videos
+  has_many :photos
   has_many :parties,through: :checkins
 
   has_secure_password

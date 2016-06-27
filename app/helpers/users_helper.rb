@@ -6,10 +6,6 @@ module UsersHelper
   end
 
   def checked_in?(party_id, user_id)
-    puts '********************'
-    puts party_id
-    puts user_id
-    puts '********************'
     @checkins = Checkin.all
     @checkins.each do |ck|
       if ck.party_id == party_id && ck.user_id == user_id

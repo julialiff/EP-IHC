@@ -58,13 +58,13 @@
               <%#= render 'upload_pic' %>
             </div><br />
         </div> -->
-        <div class="col-md-6">
+        <!-- <div class="col-md-6">
           <button class="btn btn-md btn-primary" ng-click="sendv = !sendv">Enviar vídeo <i class='glyphicon glyphicon-film'></i></button>
             <div ng-if="sendv">
               send video
               <%#= render 'upload_vid' %>
             </div>
-        </div>
+        </div> -->
         <% else %>
           <div class="col-md-12">
           <% if @party.partydate == Date.today || @party.partydate == Date.yesterday %>
@@ -116,13 +116,24 @@
     <div class="col-md-12">
       <hr />
       <h4>Vídeos</h4>
-      <row>
+      <row style="text-align:center;">
         <div class="col-md-12">
-          <iframe width="420" height="315"
-            src="https://www.youtube.com/embed/TicmTMvyDPo">
-          </iframe>
+          <row>
+            <div class="col-md-6">
+              <% @videos.each do |v| %>
+                <iframe width="420" height="315" src="https://www.youtube.com/embed/<%= v.yturl %>"></iframe>
+                <h6>Por <%= link_to v.user.name, v.user %></h6>
+              <% end %>
+            </div>
+          </row>
         </div>
       </row>
+      <div class="col-md-6">
+          <button class="btn btn-md btn-primary" ng-click="sendv = !sendv">Enviar vídeo <i class='glyphicon glyphicon-film'></i></button>
+            <div ng-if="sendv">
+              <%= render 'upload_video' %>
+            </div>
+      </div>
     </div>
   </row>
 </div>

@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'videos/new'
+
   get 'photos/new'
 
   get 'checkins/new'
@@ -25,6 +27,7 @@ Rails.application.routes.draw do
   resources :users
   resources :checkins
   resources :photos
+  resources :videos
 
   get '/checkins/create' => 'checkins#create', :as => :create_checkin
   post "checkins/create"
@@ -32,6 +35,8 @@ Rails.application.routes.draw do
   get '/photos/create' => 'photos#create', :as => :create_photo, :new => { :upload => :pic }
   post "photos/create"
 
+  get '/videos/create' => 'videos#create', :as => :create_video
+  post "videos/create"
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
