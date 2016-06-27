@@ -4,7 +4,7 @@
   <div class="col-md-6">
     <%= hidden_field_tag :party_id, @party.id %>
     <%= hidden_field_tag :user_id,  @current_user.id %>
-    <%= f.file_field     :pic, class: 'form-control' %>
+    <%= f.file_field     :pic, class: 'form-control', :required => true %>
   </div>
   <div class="col-md-3">
     <%= f.submit "Enviar!", class: "btn btn-sm btn-primary" %>

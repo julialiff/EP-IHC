@@ -7,22 +7,22 @@
     <!-- <div class="col-md-6"> -->
       <div class="col-md-6">
         <%= f.label :name, t(:name) %><br />
-        <%= f.text_field :name, class: 'form-control' %>
+        <%= f.text_field :name, class: 'form-control', :required => true %>
       </div>
 
       <div class="col-md-6">
         <%= f.label :email, t(:email) %><br />
-        <%= f.email_field :email, class: 'form-control' %>
+        <%= f.email_field :email, class: 'form-control', :required => true %>
       </div>
 
       <div class="col-md-6">
         <%= f.label :cnpj, t(:cnpj) %><br />
-        <%= f.text_field :cnpj, class: 'form-control' %>
+        <%= f.text_field :cnpj, class: 'form-control', :data => {:mask => '99.999.999/9999-99'}, :required => true %>
       </div>
 
       <div class="col-md-6">
         <%= f.label :category, t(:category) %><br />
-        <%= f.text_field :category, class: 'form-control' %>
+        <%= f.text_field :category, class: 'form-control', :required => true %>
       </div>
 
 
@@ -33,27 +33,27 @@
 
       <div class="col-md-6">
         <%= f.label :city, t(:city) %><br />
-        <%= f.text_field :city, class: 'form-control', :readonly => true, :value => 'São Paulo' %>
+        <%= f.text_field :city, class: 'form-control', :readonly => true, :value => 'São Paulo'%>
       </div>
 
       <div class="col-md-6">
         <%= f.label :neighbourhood, t(:neighbourhood) %><br />
-        <%= f.text_field :neighbourhood, class: 'form-control' %>
+        <%= f.text_field :neighbourhood, class: 'form-control', :required => true %>
       </div>
 
       <div class="col-md-6">
         <%= f.label :address, t(:address) %><br />
-        <%= f.text_field :address, class: 'form-control' %>
+        <%= f.text_field :address, class: 'form-control', :required => true %>
       </div>
 
       <div class="col-md-6">
         <%= f.label :password, t(:password) %><br />
-        <%= f.password_field :password, class: 'form-control' %>
+        <%= f.password_field :password, class: 'form-control', :required => true %>
       </div>
 
       <div class="col-md-6">
         <%= f.label :password_confirmation, t(:password_confirmation) %><br />
-        <%= f.password_field :password_confirmation, class: 'form-control' %>
+        <%= f.password_field :password_confirmation, class: 'form-control', :required => true %>
       </div>
     <!-- </div> -->
 
