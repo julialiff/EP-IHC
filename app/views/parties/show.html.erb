@@ -34,7 +34,7 @@
         <% end %>
 
         <span class="glyphicon glyphicon-music"      style="margin-top: 5px; color: #666;"></span> <%= @party.musicstyle %><br />
-        <span class="glyphicon glyphicon-calendar"   style="margin-top: 5px; color: #666;"></span> <%= @party.partydate %> · <%= @party.partytime %><br />
+        <span class="glyphicon glyphicon-calendar"   style="margin-top: 5px; color: #666;"></span> <%= @party.partydate.day %>/<%= @party.partydate.month %>/<%= @party.partydate.year %> · <%= @party.partytime %><br />
       </div>
 
       <div class="col-md-6">

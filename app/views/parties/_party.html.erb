@@ -10,7 +10,7 @@
       <div class="col-md-9">
         <h4><%= link_to party.name, party %></h4>
           <%= party.category %> · <%= party.musicstyle %><br />
-          <%= party.partydate %> · <%= party.partytime %><br />
+          <%= party.partydate.day %>/<%= party.partydate.month %>/<%= party.partydate.year %> · <%= party.partytime %><br />
           <%= link_to party.night_house.name, party.night_house %> (<%= party.night_house.address %>)
       </div>
     </li>
