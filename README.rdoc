@@ -1,6 +1,6 @@
 == README
 
-Party Finder: EP de IHC
+Party Finder: IHC Exercise Program
 
 
 * Ruby 2.3.1
@@ -12,3 +12,5 @@ Party Finder: EP de IHC
 * HTML5
 
 * CSS
+
+In this project a night club can sign up and share its own parties and events. Users can then find the parties that are about to happen based on their tastes.
